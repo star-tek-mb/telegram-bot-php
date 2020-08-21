@@ -13,11 +13,11 @@ class SendLocation
 
     private $objects = [];
 
-    public function __construct(int $chatId, float $latitude, float $longtitude)
+    public function __construct(int $chatId, float $latitude, float $longitude)
     {
         set_value($this, 'chat_id', $chatId);
         set_value($this, 'latitude', $latitude);
-        set_value($this, 'longtitude', $longtitude);
+        set_value($this, 'longtitude', $longitude);
     }
 
     public function getChatId(): int
@@ -30,9 +30,9 @@ class SendLocation
         return get_value($this, 'latitude');
     }
 
-    public function getLongtitude(): float
+    public function getLongitude(): float
     {
-        return get_value($this, 'longtitude');
+        return get_value($this, 'longitude');
     }
 
     public function setLatitude(float $latitude): void
@@ -40,9 +40,9 @@ class SendLocation
         set_value($this, 'latitude', $latitude);
     }
 
-    public function setLongtitude(float $longtitude): void
+    public function setLongtitude(float $longitude): void
     {
-        set_value($this, 'longtitude', $longtitude);
+        set_value($this, 'longitude', $longitude);
     }
 
     public function setReplyMarkup(ReplyMarkup $replyMarkup): void
