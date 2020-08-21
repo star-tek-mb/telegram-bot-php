@@ -36,6 +36,11 @@ class Message
         return get_object($this, 'contact', Contact::class);
     }
 
+    public function getLocation(): ?Location
+    {
+        return get_object($this, 'location', Location::class);
+    }
+
     public function getDocument(): ?Document
     {
         return get_object($this, 'document', Document::class);

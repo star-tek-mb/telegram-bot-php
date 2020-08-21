@@ -3,7 +3,6 @@
 namespace Formapro\TelegramBot;
 
 use function Formapro\Values\set_values;
-use GuzzleHttp\ClientInterface;
 use Psr\Http\Message\ResponseInterface;
 use function Formapro\Values\set_value;
 use function Formapro\Values\get_values;
@@ -14,10 +13,10 @@ class Bot
 
     private $httpClient;
 
-    public function __construct(string $token, ClientInterface $httpClient = null)
+    public function __construct(string $token)
     {
+        $this->httpClient = new \GuzzleHttp\Client();
         $this->token = $token;
-        $this->httpClient = $httpClient ?? new \GuzzleHttp\Client();
     }
 
     public function setWebhook(SetWebhook $setWebhook): ResponseInterface
@@ -153,6 +152,13 @@ class Bot
     {
         return $this->httpClient->post($this->getMethodUrl('sendInvoice'), [
             'json' => get_values($sendInvoice),
+        ]);
+    }
+
+    public function sendLocation(SendLocation $sendLocation)
+    {
+        return $this->httpClient->post($this->getMethodUrl('sendLocation'), [
+            'json' => get_values($sendLocation),
         ]);
     }
 

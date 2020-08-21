@@ -22,11 +22,6 @@ class Update
         return get_object($this, 'message', Message::class);
     }
 
-    public function getChannelPost(): ?Message
-    {
-        return get_object($this, 'channel_post', Message::class);
-    }
-
     public function getEditedMessage(): ?Message
     {
         return get_object($this, 'edited_message', Message::class);
