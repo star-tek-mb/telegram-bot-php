@@ -17,7 +17,7 @@ class SendLocation
     {
         set_value($this, 'chat_id', $chatId);
         set_value($this, 'latitude', $latitude);
-        set_value($this, 'longtitude', $longitude);
+        set_value($this, 'longitude', $longitude);
     }
 
     public function getChatId(): int
@@ -40,7 +40,7 @@ class SendLocation
         set_value($this, 'latitude', $latitude);
     }
 
-    public function setLongtitude(float $longitude): void
+    public function setLongitude(float $longitude): void
     {
         set_value($this, 'longitude', $longitude);
     }
